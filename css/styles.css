@@ -119,6 +119,17 @@ h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1 {
   line-height: 1.2;
 }
 
+.form-row-custom {
+    display: flex;
+    gap: 15px;
+    width: 100%;
+}
+
+.form-row-custom input,
+.form-row-custom select {
+    flex: 1;
+}
+
 h1, .h1 {
   font-size: calc(1.375rem + 1.5vw);
 }
@@ -3188,6 +3199,36 @@ textarea.form-control-lg {
   }
 }
 
+.switcher {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+}
+
+.switcher input {
+    display: none;
+}
+
+.switcher label {
+    flex: 1; /* займають всю ширину */
+    text-align: center;
+
+    padding: 12px 24px;
+    background: rgba(255,255,255,0.15);
+    color: white;
+
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.2s;
+    border: 2px solid transparent;
+}
+
+.switcher input:checked + label {
+    background: white;
+    color: black;
+    border-color: white;
+}
+
 .dropup,
 .dropend,
 .dropdown,
@@ -3257,8 +3298,10 @@ textarea.form-control-lg {
   border-radius: var(--bs-dropdown-border-radius);
 }
 .dropdown-menu[data-bs-popper] {
-  top: 100%;
   left: 0;
+  top: 100% !important;
+  bottom: auto !important;
+  transform: none !important;
   margin-top: var(--bs-dropdown-spacer);
 }
 
@@ -10840,7 +10883,7 @@ textarea.form-control-lg {
 
 header.masthead {
   position: relative;
-  background-color: #343a40;
+  background-color: #000;
   background: url("../assets/img/bg-masthead.jpg") no-repeat center center;
   background-size: cover;
   padding-top: 8rem;
