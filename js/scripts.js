@@ -1,1320 +1,229 @@
-const locations = {
 
-    copart: [
-
-        {
-            id: "ABILENE",
-            name: "ABILENE (TX)",
-            fee: 500
-        },
-
-         {
-            id: "ADELANTO",
-            name: "ADELANTO (CA)",
-            fee: 500
-        },
-
-         {
-            id: "AKRON",
-            name: "AKRON (OH)",
-            fee: 500
-        },
-
-         {
-            id: "ALBANY",
-            name: "ALBANY (NY)",
-            fee: 500
-        },
-
-         {
-            id: "ALBUQUERQUE",
-            name: "ALBUQUERQUE (NM)",
-            fee: 500
-        },
-
-         {
-            id: "ALTOONA",
-            name: "ALTOONA (PA)",
-            fee: 500
-        },
-
-         {
-            id: "AMARILLO",
-            name: "AMARILLO (TX)",
-            fee: 500
-        },
-
-         {
-            id: "ANCHORAGE",
-            name: "ANCHORAGE (AK)",
-            fee: 500
-        },
-
-         {
-            id: "ANDREWS",
-            name: "ANDREWS (TX)",
-            fee: 500
-        },
-        {
-            id: "ANTELOPE",
-            name: "ANTELOPE (CA)",
-            fee: 500
-        },
-
-         {
-            id: "APPLETON",
-            name: "APPLETON (WI)",
-            fee: 500
-        },
-
-         {
-            id: "ATLANTA EAST",
-            name: "ATLANTA EAST (GA)",
-            fee: 500
-        },
-
-         {
-            id: "ATLANTA NORTH",
-            name: "ATLANTA NORTH (GA)",
-            fee: 500
-        },
-
-         {
-            id: "ATLANTA SOUTH",
-            name: "ATLANTA SOUTH (GA)",
-            fee: 500
-        },
-
-         {
-            id: "ATLANTA WEST",
-            name: "ATLANTA WEST (GA)",
-            fee: 500
-        },
-
-         {
-            id: "AUGUSTA",
-            name: "AUGUSTA (GA)",
-            fee: 500
-        },
-
-         {
-            id: "AUSTIN",
-            name: "AUSTIN (TX)",
-            fee: 500
-        },
-
-         {
-            id: "BAKERSFIELD",
-            name: "BAKERSFIELD (CA)",
-            fee: 500
-        },
-
-        {
-            id: "BALTIMORE",
-            name: "BALTIMORE (MD)",
-            fee: 500
-        },
-
-         {
-            id: "BALTIMORE EAST ",
-            name: "BALTIMORE EAST (MD)",
-            fee: 500
-        },
-
-         {
-            id: "BATON ROUGE",
-            name: "BATON ROUGE (LA)",
-            fee: 500
-        },
-
-         {
-            id: "BILLINGS",
-            name: "BILLINGS (MT)",
-            fee: 500
-        },
-
-         {
-            id: "BIRMINGHAM",
-            name: "BIRMINGHAM (AL)",
-            fee: 500
-        },
-
-         {
-            id: "BISMARCK",
-            name: "BISMARCK (ND)",
-            fee: 500
-        },
-
-         {
-            id: "BOISE",
-            name: "BOISE (ID)",
-            fee: 500
-        },
-
-         {
-    id: "BUFFALO",
-    name: "BUFFALO (NY)",
-    fee: 500
-        },
-
-        {
-    id: "CALGARY",
-    name: "Calgary (AB)",
-    fee: 500
-        },
-
-        {
-    id: "CANDIA",
-    name: "CANDIA (NH)",
-    fee: 500
-        },
-
-        {
-    id: "CARTERSVILLE",
-    name: "CARTERSVILLE (GA)",
-    fee: 500
-        },
-
-        {
-    id: "CASPER",
-    name: "CASPER (WY)",
-    fee: 500
-        },
-
-        {
-    id: "CEDAR RAPIDS",
-    name: "CEDAR RAPIDS (IA)",
-    fee: 500
-        },
-
-        {
-    id: "CHAMBERSBURG",
-    name: "CHAMBERSBURG (PA)",
-    fee: 500
-        },
-
-        {
-    id: "CHARLESTON",
-    name: "CHARLESTON (WV)",
-    fee: 500
-        },
-
-        {
-    id: "CHICAGO NORTH",
-    name: "CHICAGO NORTH (IL)",
-    fee: 500
-        },
-
-        {
-    id: "CHICAGO SOUTH",
-    name: "CHICAGO SOUTH (IL)",
-    fee: 500
-        },
-
-        {
-    id: "CHINA GROVE",
-    name: "CHINA GROVE (NC)",
-    fee: 500
-        },
-
-        {
-    id: "CICERO",
-    name: "CICERO (IN)",
-    fee: 500
-        },
-
-        {
-    id: "CLEVELAND EAST",
-    name: "CLEVELAND EAST (OH)",
-    fee: 500
-        },
-
-        {
-    id: "CLEVELAND WEST",
-    name: "CLEVELAND WEST (OH)",
-    fee: 500
-        },
-
-        {
-    id: "CLEWISTON",
-    name: "CLEWISTON (FL)",
-    fee: 500
-        },
-
-        {
-    id: "COLORADO SPRINGS",
-    name: "COLORADO SPRINGS (CO)",
-    fee: 500
-        },
-
-        {
-    id: "COLUMBIA",
-    name: "COLUMBIA (SC)",
-    fee: 500
-        },
-
-        {
-    id: "COLUMBIA MO",
-    name: "COLUMBIA (MO)",
-    fee: 500
-        },
-
-        {
-    id: "COLUMBUS",
-    name: "COLUMBUS (OH)",
-    fee: 500
-        },
-
-        {
-    id: "CONCORD",
-    name: "CONCORD (NC)",
-    fee: 500
-        },
-
-        {
-    id: "CORPUS CHRISTI",
-    name: "CORPUS CHRISTI (TX)",
-    fee: 500
-        },
-
-        {
-    id: "CRASHEDTOYS ATLANTA",
-    name: "CRASHEDTOYS ATLANTA (GA)",
-    fee: 500
-        },
-
-        {
-    id: "CRASHEDTOYS DALLAS",
-    name: "CRASHEDTOYS DALLAS (TX)",
-    fee: 500
-        },
-
-        {
-    id: "CRASHEDTOYS MINNEAPOLIS",
-    name: "CRASHEDTOYS MINNEAPOLIS (MN)",
-    fee: 500
-        },
-
-        {
-    id: "CRASHEDTOYS SACRAMENTO",
-    name: "CRASHEDTOYS SACRAMENTO (CA)",
-    fee: 500
-        },
-
-        {
-    id: "DALLAS",
-    name: "DALLAS (TX)",
-    fee: 500
-        },
-
-        {
-    id: "DALLAS SOUTH",
-    name: "DALLAS SOUTH (TX)",
-    fee: 500
-        },
-
-        {
-    id: "DANVILLE",
-    name: "DANVILLE (VA)",
-    fee: 500
-        },
-
-        {
-    id: "DAVENPORT",
-    name: "DAVENPORT (IA)",
-    fee: 500
-        },
-
-        {
-    id: "DAYTON",
-    name: "DAYTON (OH)",
-    fee: 500
-        },
-
-        {
-    id: "DENVER",
-    name: "DENVER (CO)",
-    fee: 500
-        },
-
-        {
-    id: "DENVER CENTRAL",
-    name: "DENVER CENTRAL (CO)",
-    fee: 500
-        },
-
-        {
-    id: "DENVER SOUTH",
-    name: "DENVER SOUTH (CO)",
-    fee: 500
-        },
-
-        {
-    id: "DES MOINES",
-    name: "DES MOINES (IA)",
-    fee: 500
-        },
-
-        {
-    id: "DETROIT",
-    name: "DETROIT (MI)",
-    fee: 500
-        },
-
-        {
-    id: "DOTHAN",
-    name: "DOTHAN (AL)",
-    fee: 500
-        },
-
-        {
-            id: "DYER",
-            name: "DYER (IN)",
-            fee: 500
-        },
-
-        {
-            id: "EARLINGTON",
-            name: "EARLINGTON (KY)",
-            fee: 500
-        },
-
-        {
-            id: "EDMONTON",
-            name: "Edmonton (AB)",
-            fee: 500
-        },
-
-        {
-    id: "EL PASO",
-    name: "EL PASO (TX)",
-    fee: 500
-        },
-
-        {
-    id: "EUGENE",
-    name: "EUGENE (OR)",
-    fee: 500
-        },
-
-        {
-    id: "EXETER",
-    name: "EXETER (RI)",
-    fee: 500
-        },
-
-        {
-    id: "FAIRBURN",
-    name: "FAIRBURN (GA)",
-    fee: 500
-        },
-
-        {
-    id: "FAYETTEVILLE",
-    name: "FAYETTEVILLE (AR)",
-    fee: 500
-        },
-
-        {
-    id: "FLINT",
-    name: "FLINT (MI)",
-    fee: 500
-        },
-
-        {
-    id: "FORT WAYNE",
-    name: "FORT WAYNE (IN)",
-    fee: 500
-        },
-
-        {
-    id: "FREDERICKSBURG",
-    name: "FREDERICKSBURG (VA)",
-    fee: 500
-        },
-
-        {
-    id: "FREETOWN",
-    name: "FREETOWN (MA)",
-    fee: 500
-        },
-
-        {
-    id: "FRESNO",
-    name: "FRESNO (CA)",
-    fee: 500
-        },
-
-        {
-    id: "FT. PIERCE",
-    name: "FT. PIERCE (FL)",
-    fee: 500
-        },
-
-        {
-            id: "FT. WORTH",
-            name: "FT. WORTH (TX)",
-            fee: 500
-        },
-        {
-            id: "GASTONIA",
-            name: "GASTONIA (NC)",
-            fee: 500
-        },
-
-        {
-            id: "GLASSBORO EAST",
-            name: "GLASSBORO EAST (NJ)",
-            fee: 500
-        },
-
-        {
-            id: "GLASSBORO WEST",
-            name: "GLASSBORO WEST (NJ)",
-            fee: 500
-        },
-
-        {
-            id: "GRAHAM",
-            name: "GRAHAM (WA)",
-            fee: 500
-        },
-
-        {
-            id: "GRENADA",
-            name: "GRENADA (MS)",
-            fee: 500
-        },
-
-        {
-            id: "HALIFAX",
-            name: "Halifax (NS)",
-            fee: 500
-        },
-
-        {
-            id: "HAMMOND",
-            name: "HAMMOND (IN)",
-            fee: 500
-        },
-
-        {
-            id: "HAMPTON",
-            name: "HAMPTON (VA)",
-            fee: 500
-        },
-
-        {
-            id: "HARRISBURG",
-            name: "HARRISBURG (PA)",
-            fee: 500
-        },
-
-        {
-            id: "HARTFORD",
-            name: "HARTFORD (CT)",
-            fee: 500
-        },
-
-        {
-            id: "HARTFORD SPRINGFIELD",
-            name: "HARTFORD SPRINGFIELD (CT)",
-            fee: 500
-        },
-
-        {
-            id: "HAYWARD",
-            name: "HAYWARD (CA)",
-            fee: 500
-        },
-
-        {
-            id: "HELENA",
-            name: "HELENA (MT)",
-            fee: 500
-        },
-
-        {
-            id: "HONOLULU",
-            name: "HONOLULU (HI)",
-            fee: 500
-        },
-
-        {
-            id: "HOUSTON",
-            name: "HOUSTON (TX)",
-            fee: 500
-        },
-
-        {
-            id: "HOUSTON EAST",
-            name: "HOUSTON EAST (TX)",
-            fee: 500
-        },
-
-        {
-            id: "INDIANAPOLIS",
-            name: "INDIANAPOLIS (IN)",
-            fee: 500
-        },
-
-        {
-            id: "IONIA",
-            name: "IONIA (MI)",
-            fee: 500
-        },
-
-        {
-            id: "JACKSON",
-            name: "JACKSON (MS)",
-            fee: 500
-        },
-
-        {
-            id: "JACKSONVILLE NORTH",
-            name: "JACKSONVILLE NORTH (FL)",
-            fee: 500
-        },
-
-        {
-            id: "KANSAS CITY",
-            name: "KANSAS CITY (KS)",
-            fee: 500
-        },
-
-        {
-            id: "KINCHELOE",
-            name: "KINCHELOE (MI)",
-            fee: 500
-        },
-
-        {
-            id: "KINDAQUIK TOWING LLC",
-            name: "Kindaquik Towing LLC (HI)",
-            fee: 500
-        },
-
-        {
-            id: "KNIGHTDALE",
-            name: "KNIGHTDALE (NC)",
-            fee: 500
-        },
-
-        {
-            id: "KNOXVILLE",
-            name: "KNOXVILLE (TN)",
-            fee: 500
-        },
-
-        {
-            id: "LANSING",
-            name: "LANSING (MI)",
-            fee: 500
-        },
-
-        {
-            id: "LAS VEGAS",
-            name: "LAS VEGAS (NV)",
-            fee: 500
-        },
-
-        {
-            id: "LAS VEGAS WEST",
-            name: "Las Vegas West (NV)",
-            fee: 500
-        },
-
-        {
-            id: "LAUREL",
-            name: "LAUREL (MD)",
-            fee: 500
-        },
-
-        {
-            id: "LEXINGTON EAST",
-            name: "LEXINGTON EAST (KY)",
-            fee: 500
-        },
-
-        {
-            id: "LEXINGTON WEST",
-            name: "LEXINGTON WEST (KY)",
-            fee: 500
-        },
-
-        {
-            id: "LINCOLN",
-            name: "LINCOLN (NE)",
-            fee: 500
-        },
-
-        {
-            id: "LITTLE ROCK",
-            name: "LITTLE ROCK (AR)",
-            fee: 500
-        },
-
-        {
-            id: "LONDON",
-            name: "London (ON)",
-            fee: 500
-        },
-
-        {
-            id: "LONG BEACH",
-            name: "LONG BEACH (CA)",
-            fee: 500
-        },
-
-        {
-            id: "LONG ISLAND",
-            name: "LONG ISLAND (NY)",
-            fee: 500
-        },
-
-        {
-            id: "LONGVIEW",
-            name: "LONGVIEW (TX)",
-            fee: 500
-        },
-
-        {
-            id: "LOS ANGELES",
-            name: "LOS ANGELES (CA)",
-            fee: 500
-        },
-
-        {
-            id: "LOUISVILLE",
-            name: "LOUISVILLE (KY)",
-            fee: 500
-        },
-
-        {
-            id: "LUFKIN",
-            name: "LUFKIN (TX)",
-            fee: 500
-        },
-
-        {
-            id: "LUMBERTON",
-            name: "LUMBERTON (NC)",
-            fee: 500
-        },
-
-        {
-            id: "LYMAN",
-            name: "LYMAN (ME)",
-            fee: 500
-        },
-
-        {
-            id: "MACON",
-            name: "MACON (GA)",
-            fee: 500
-        },
-
-        {
-            id: "MADISON SOUTH",
-            name: "MADISON SOUTH (WI)",
-            fee: 500
-        },
-        {
-            id: "MARTINEZ",
-            name: "MARTINEZ (CA)",
-            fee: 500
-        },
-
-        {
-            id: "MCALLEN",
-            name: "MCALLEN (TX)",
-            fee: 500
-        },
-
-        {
-            id: "MEBANE",
-            name: "MEBANE (NC)",
-            fee: 500
-        },
-
-        {
-            id: "MEMPHIS",
-            name: "MEMPHIS (TN)",
-            fee: 500
-        },
-
-        {
-            id: "MENTONE",
-            name: "Mentone (CA)",
-            fee: 500
-        },
-
-        {
-            id: "MIAMI CENTRAL",
-            name: "MIAMI CENTRAL (FL)",
-            fee: 500
-        },
-
-        {
-            id: "MIAMI NORTH",
-            name: "MIAMI NORTH (FL)",
-            fee: 500
-        },
-
-        {
-            id: "MIAMI SOUTH",
-            name: "MIAMI SOUTH (FL)",
-            fee: 500
-        },
-
-        {
-            id: "MILWAUKEE NORTH",
-            name: "MILWAUKEE NORTH (WI)",
-            fee: 500
-        },
-
-        {
-            id: "MILWAUKEE SOUTH",
-            name: "MILWAUKEE SOUTH (WI)",
-            fee: 500
-        },
-
-        {
-            id: "MINNEAPOLIS",
-            name: "MINNEAPOLIS (MN)",
-            fee: 500
-        },
-
-        {
-            id: "MINNEAPOLIS NORTH",
-            name: "MINNEAPOLIS NORTH (MN)",
-            fee: 500
-        },
-
-        {
-            id: "MOBILE",
-            name: "MOBILE (AL)",
-            fee: 500
-        },
-
-        {
-            id: "MOBILE SOUTH",
-            name: "MOBILE South (AL)",
-            fee: 500
-        },
-
-        {
-            id: "MOCKSVILLE",
-            name: "MOCKSVILLE (NC)",
-            fee: 500
-        },
-
-        {
-            id: "MONCTON",
-            name: "Moncton (NB)",
-            fee: 500
-        },
-
-        {
-            id: "MONTGOMERY",
-            name: "MONTGOMERY (AL)",
-            fee: 500
-        },
-
-        {
-            id: "MONTREAL",
-            name: "Montreal (QC)",
-            fee: 500
-        },
-
-        {
-            id: "NAPA",
-            name: "NAPA (CA)",
-            fee: 500
-        },
-
-        {
-            id: "NASHVILLE",
-            name: "NASHVILLE (TN)",
-            fee: 500
-        },
-
-        {
-            id: "NEW ORLEANS",
-            name: "NEW ORLEANS (LA)",
-            fee: 500
-        },
-
-        {
-            id: "NEWBURGH",
-            name: "NEWBURGH (NY)",
-            fee: 500
-        },
-
-        {
-            id: "NORTH AUSTIN",
-            name: "NORTH AUSTIN (TX)",
-            fee: 500
-        },
-
-        {
-            id: "NORTH BOSTON",
-            name: "NORTH BOSTON (MA)",
-            fee: 500
-        },
-
-        {
-            id: "NORTH CHARLESTON",
-            name: "NORTH CHARLESTON (SC)",
-            fee: 500
-        },
-
-        {
-            id: "NORTH SEATTLE",
-            name: "NORTH SEATTLE (WA)",
-            fee: 500
-        },
-
-        {
-            id: "OCALA",
-            name: "OCALA (FL)",
-            fee: 500
-        },
-
-        {
-            id: "OGDEN",
-            name: "OGDEN (UT)",
-            fee: 500
-        },
-
-        {
-            id: "OKLAHOMA CITY",
-            name: "OKLAHOMA CITY (OK)",
-            fee: 500
-        },
-
-        {
-            id: "ORLANDO NORTH",
-            name: "ORLANDO NORTH (FL)",
-            fee: 500
-        },
-
-        {
-            id: "ORLANDO SOUTH",
-            name: "ORLANDO SOUTH (FL)",
-            fee: 500
-        },
-
-        {
-            id: "OTTAWA",
-            name: "Ottawa (ON)",
-            fee: 500
-        },
-
-        {
-            id: "PASCO",
-            name: "PASCO (WA)",
-            fee: 500
-        },
-
-        {
-            id: "PEORIA",
-            name: "PEORIA (IL)",
-            fee: 500
-        },
-
-        {
-            id: "PHILADELPHIA",
-            name: "PHILADELPHIA (PA)",
-            fee: 500
-        },
-
-        {
-            id: "PHILADELPHIA EAST",
-            name: "PHILADELPHIA EAST (PA)",
-            fee: 500
-        },
-
-        {
-            id: "PHOENIX",
-            name: "PHOENIX (AZ)",
-            fee: 500
-        },
-
-        {
-            id: "PHOENIX NORTH",
-            name: "PHOENIX NORTH (AZ)",
-            fee: 500
-        },
-
-        {
-            id: "PITTSBURGH NORTH",
-            name: "PITTSBURGH NORTH (PA)",
-            fee: 500
-        },
-
-        {
-            id: "PITTSBURGH SOUTH",
-            name: "PITTSBURGH SOUTH (PA)",
-            fee: 500
-        },
-
-        {
-            id: "PITTSBURGH WEST",
-            name: "PITTSBURGH WEST (PA)",
-            fee: 500
-        },
-        {
-            id: "PORTLAND NORTH",
-            name: "PORTLAND NORTH (OR)",
-            fee: 500
-        },
-
-        {
-            id: "PORTLAND SOUTH",
-            name: "PORTLAND SOUTH (OR)",
-            fee: 500
-        },
-
-        {
-            id: "PUNTA GORDA",
-            name: "PUNTA GORDA (FL)",
-            fee: 500
-        },
-
-        {
-            id: "RALEIGH",
-            name: "RALEIGH (NC)",
-            fee: 500
-        },
-
-        {
-            id: "RALEIGH NORTH",
-            name: "RALEIGH NORTH (NC)",
-            fee: 500
-        },
-
-        {
-            id: "RANCHO CUCAMONGA",
-            name: "RANCHO CUCAMONGA (CA)",
-            fee: 500
-        },
-
-        {
-            id: "RAPID CITY",
-            name: "RAPID CITY (SD)",
-            fee: 500
-        },
-
-        {
-            id: "REDDING",
-            name: "Redding (CA)",
-            fee: 500
-        },
-
-        {
-            id: "RENO",
-            name: "RENO (NV)",
-            fee: 500
-        },
-
-        {
-            id: "RICHMOND",
-            name: "RICHMOND (VA)",
-            fee: 500
-        },
-
-        {
-            id: "RICHMOND EAST",
-            name: "RICHMOND EAST (VA)",
-            fee: 500
-        },
-
-        {
-            id: "ROCHESTER",
-            name: "ROCHESTER (NY)",
-            fee: 500
-        },
-
-        {
-            id: "RUTLAND",
-            name: "Rutland (VT)",
-            fee: 500
-        },
-
-        {
-            id: "SACRAMENTO",
-            name: "SACRAMENTO (CA)",
-            fee: 500
-        },
-
-        {
-            id: "SALT LAKE CITY",
-            name: "SALT LAKE CITY (UT)",
-            fee: 500
-        },
-
-        {
-            id: "SAN ANTONIO",
-            name: "SAN ANTONIO (TX)",
-            fee: 500
-        },
-
-        {
-            id: "SAN BERNARDINO",
-            name: "SAN BERNARDINO (CA)",
-            fee: 500
-        },
-
-        {
-            id: "SAN DIEGO",
-            name: "SAN DIEGO (CA)",
-            fee: 500
-        },
-
-        {
-            id: "SAN JOSE",
-            name: "SAN JOSE (CA)",
-            fee: 500
-        },
-
-        {
-            id: "SAVANNAH",
-            name: "SAVANNAH (GA)",
-            fee: 500
-        },
-
-        {
-            id: "SCRANTON",
-            name: "SCRANTON (PA)",
-            fee: 500
-        },
-
-        {
-            id: "SEAFORD",
-            name: "SEAFORD (DE)",
-            fee: 500
-        },
-
-        {
-            id: "SHREVEPORT",
-            name: "SHREVEPORT (LA)",
-            fee: 500
-        },
-
-        {
-            id: "SIKESTON",
-            name: "SIKESTON (MO)",
-            fee: 500
-        },
-
-        {
-            id: "SO SACRAMENTO",
-            name: "SO SACRAMENTO (CA)",
-            fee: 500
-        },
-
-        {
-            id: "SOMERVILLE",
-            name: "SOMERVILLE (NJ)",
-            fee: 500
-        },
-
-        {
-            id: "SOUTH BOSTON",
-            name: "SOUTH BOSTON (MA)",
-            fee: 500
-        },
-
-        {
-            id: "SOUTHERN ILLINOIS",
-            name: "SOUTHERN ILLINOIS (IL)",
-            fee: 500
-        },
-
-        {
-            id: "SPANAWAY",
-            name: "SPANAWAY (WA)",
-            fee: 500
-        },
-
-        {
-            id: "SPARTANBURG",
-            name: "SPARTANBURG (SC)",
-            fee: 500
-        },
-
-        {
-            id: "SPOKANE",
-            name: "SPOKANE (WA)",
-            fee: 500
-        },
-
-        {
-            id: "SPRINGFIELD",
-            name: "SPRINGFIELD (MO)",
-            fee: 500
-        },
-
-        {
-            id: "ST. CLOUD",
-            name: "ST. CLOUD (MN)",
-            fee: 500
-        },
-
-        {
-            id: "ST. JOHN'S",
-            name: "St. John'S (NL)",
-            fee: 500
-        },
-
-        {
-            id: "ST. LOUIS",
-            name: "ST. LOUIS (MO)",
-            fee: 500
-        },
-
-        {
-            id: "SUN VALLEY",
-            name: "SUN VALLEY (CA)",
-            fee: 500
-        },
-
-        {
-            id: "SYRACUSE",
-            name: "SYRACUSE (NY)",
-            fee: 500
-        },
-
-        {
-            id: "TALLAHASSEE",
-            name: "TALLAHASSEE (FL)",
-            fee: 500
-        },
-
-        {
-            id: "TAMPA SOUTH",
-            name: "TAMPA SOUTH (FL)",
-            fee: 500
-        },
-
-        {
-            id: "TANNER",
-            name: "TANNER (AL)",
-            fee: 500
-        },
-
-        {
-            id: "TIFTON",
-            name: "TIFTON (GA)",
-            fee: 500
-        },
-
-        {
-            id: "TORONTO",
-            name: "TORONTO (ON)",
-            fee: 500
-        },
-
-        {
-            id: "TRENTON",
-            name: "TRENTON (NJ)",
-            fee: 500
-        },
-
-        {
-            id: "TUCSON",
-            name: "TUCSON (AZ)",
-            fee: 500
-        },
-
-        {
-            id: "TULSA",
-            name: "TULSA (OK)",
-            fee: 500
-        },
-
-        {
-            id: "VALLEJO",
-            name: "VALLEJO (CA)",
-            fee: 500
-        },
-
-        {
-            id: "VAN NUYS",
-            name: "VAN NUYS (CA)",
-            fee: 500
-        },
-
-        {
-            id: "WACO",
-            name: "WACO (TX)",
-            fee: 500
-        },
-
-        {
-            id: "WALTON",
-            name: "WALTON (KY)",
-            fee: 500
-        },
-
-        {
-            id: "WASHINGTON DC",
-            name: "WASHINGTON DC (MD)",
-            fee: 500
-        },
-
-        {
-            id: "WAYLAND",
-            name: "Wayland (MI)",
-            fee: 500
-        },
-
-        {
-            id: "WEBSTER",
-            name: "Webster (NH)",
-            fee: 500
-        },
-
-        {
-            id: "WEST PALM BEACH",
-            name: "WEST PALM BEACH (FL)",
-            fee: 500
-        },
-
-        {
-            id: "WEST WARREN",
-            name: "WEST WARREN (MA)",
-            fee: 500
-        },
-
-        {
-            id: "WHEELING",
-            name: "WHEELING (IL)",
-            fee: 500
-        },
-
-        {
-            id: "WICHITA",
-            name: "WICHITA (KS)",
-            fee: 500
-        },
-
-        {
-            id: "WINDHAM",
-            name: "Windham (ME)",
-            fee: 500
-        },
-
-        {
-            id: "YORK HAVEN",
-            name: "YORK HAVEN (PA)",
-            fee: 500
-        }
-     
-],
-
-    iaai: [
+    const copartLocations = [
+
+        { id: "ABILENE",name: "ABILENE (TX)", fee: 500},
+        { id: "ADELANTO",name: "ADELANTO (CA)",fee: 500 },
+        { id: "AKRON",name: "AKRON (OH)",fee: 500},
+        { id: "ALBANY",name: "ALBANY (NY)",fee: 500},
+        { id: "ALBUQUERQUE", name: "ALBUQUERQUE (NM)", fee: 500},
+        { id: "ALTOONA",name: "ALTOONA (PA)",fee: 500},
+        { id: "AMARILLO",name: "AMARILLO (TX)",fee: 500},
+        { id: "ANCHORAGE", name: "ANCHORAGE (AK)", fee: 500},
+        { id: "ANDREWS",name: "ANDREWS (TX)",fee: 500},
+        { id: "ANTELOPE",name: "ANTELOPE (CA)",fee: 500},
+        {id: "APPLETON",name: "APPLETON (WI)",fee: 500},
+        {id: "ATLANTA EAST",name: "ATLANTA EAST (GA)",fee: 500},
+        {id: "ATLANTA NORTH",name: "ATLANTA NORTH (GA)",fee: 500 },
+        {id: "ATLANTA SOUTH",name: "ATLANTA SOUTH (GA)",fee: 500},
+        {id: "ATLANTA WEST",name: "ATLANTA WEST (GA)",fee: 500},
+        {id: "AUGUSTA",name: "AUGUSTA (GA)",fee: 500},
+        {id: "AUSTIN",name: "AUSTIN (TX)",fee: 500},
+        {id: "BAKERSFIELD",name: "BAKERSFIELD (CA)",fee: 500},
+        {id: "BALTIMORE",name: "BALTIMORE (MD)",fee: 500},
+        {id: "BALTIMORE EAST ",name: "BALTIMORE EAST (MD)",fee: 500},
+        {id: "BATON ROUGE",name: "BATON ROUGE (LA)",fee: 500},
+        {id: "BILLINGS",name: "BILLINGS (MT)",fee: 500},
+        {id: "BIRMINGHAM",name: "BIRMINGHAM (AL)",fee: 500},
+        {id: "BISMARCK",name: "BISMARCK (ND)",fee: 500},
+        {id: "BOISE",name: "BOISE (ID)",fee: 500},
+        {id: "BUFFALO",name: "BUFFALO (NY)",fee: 500 },
+        {id: "CALGARY",name: "Calgary (AB)",fee: 500},
+        {id: "CANDIA",name: "CANDIA (NH)",fee: 500},
+        {id: "CARTERSVILLE",name: "CARTERSVILLE (GA)",fee: 500},
+        {id: "CASPER",name: "CASPER (WY)",fee: 500 },
+        {id: "CEDAR RAPIDS",name: "CEDAR RAPIDS (IA)",fee: 500},
+        {id: "CHAMBERSBURG",name: "CHAMBERSBURG (PA)",fee: 500},
+        {id: "CHARLESTON",name: "CHARLESTON (WV)",fee: 500 },
+        {id: "CHICAGO NORTH",name: "CHICAGO NORTH (IL)",fee: 500},
+        {id: "CHICAGO SOUTH",name: "CHICAGO SOUTH (IL)",fee: 500},
+        {id: "CHINA GROVE",name: "CHINA GROVE (NC)",fee: 500},
+        {id: "CICERO",name: "CICERO (IN)",fee: 500},
+        {id: "CLEVELAND EAST",name: "CLEVELAND EAST (OH)",fee: 500},
+        {id: "CLEVELAND WEST",name: "CLEVELAND WEST (OH)",fee: 500},
+        {id: "CLEWISTON",name: "CLEWISTON (FL)",fee: 500},
+        {id: "COLORADO SPRINGS",name: "COLORADO SPRINGS (CO)",fee: 500},
+        {id: "COLUMBIA",name: "COLUMBIA (SC)",fee: 500},
+        {id: "COLUMBIA MO",name: "COLUMBIA (MO)",fee: 500},
+        {id: "COLUMBUS",name: "COLUMBUS (OH)",fee: 500},
+        {id: "CONCORD",name: "CONCORD (NC)",fee: 500 },
+        {id: "CORPUS CHRISTI",name: "CORPUS CHRISTI (TX)",fee: 500},
+        {id: "CRASHEDTOYS ATLANTA",name: "CRASHEDTOYS ATLANTA (GA)",fee: 500},
+        {id: "CRASHEDTOYS DALLAS",name: "CRASHEDTOYS DALLAS (TX)",fee: 500},
+        {id: "CRASHEDTOYS MINNEAPOLIS",name: "CRASHEDTOYS MINNEAPOLIS (MN)",fee: 500},
+        {id: "CRASHEDTOYS SACRAMENTO",name: "CRASHEDTOYS SACRAMENTO (CA)",fee: 500},
+        {id: "DALLAS",name: "DALLAS (TX)",fee: 500},
+        {id: "DALLAS SOUTH",name: "DALLAS SOUTH (TX)",fee: 500},
+        {id: "DANVILLE",name: "DANVILLE (VA)",fee: 500},
+        {id: "DAVENPORT",name: "DAVENPORT (IA)",fee: 500 },
+        {id: "DAYTON",name: "DAYTON (OH)",fee: 500},
+        {id: "DENVER",name: "DENVER (CO)",fee: 500},
+        {id: "DENVER CENTRAL",name: "DENVER CENTRAL (CO)",fee: 500},
+        {id: "DENVER SOUTH",name: "DENVER SOUTH (CO)",fee: 500},
+        {id: "DES MOINES",name: "DES MOINES (IA)",fee: 500},
+        {id: "DETROIT",name: "DETROIT (MI)",fee: 500},
+        {id: "DOTHAN",name: "DOTHAN (AL)",fee: 500},
+        {id: "DYER",name: "DYER (IN)",fee: 500},
+        {id: "EARLINGTON",name: "EARLINGTON (KY)",fee: 500},
+        {id: "EDMONTON",name: "Edmonton (AB)",fee: 500},
+        {id: "EL PASO",name: "EL PASO (TX)",fee: 500},
+        {id: "EUGENE",name: "EUGENE (OR)",fee: 500},
+        {id: "EXETER",name: "EXETER (RI)",fee: 500},
+        {id: "FAIRBURN",name: "FAIRBURN (GA)",fee: 500},
+        {id: "FAYETTEVILLE",name: "FAYETTEVILLE (AR)",fee: 500},
+        {id: "FLINT",name: "FLINT (MI)",fee: 500},
+        {id: "FORT WAYNE",name: "FORT WAYNE (IN)",fee: 500},
+        {id: "FREDERICKSBURG",name: "FREDERICKSBURG (VA)",fee: 500},
+        {id: "FREETOWN",name: "FREETOWN (MA)",fee: 500},
+        {id: "FRESNO",name: "FRESNO (CA)",fee: 500},
+        {id: "FT. PIERCE",name: "FT. PIERCE (FL)",fee: 500},
+        {id: "FT. WORTH",name: "FT. WORTH (TX)",fee: 500},
+        {id: "GASTONIA",name: "GASTONIA (NC)",fee: 500},
+        {id: "GLASSBORO EAST",name: "GLASSBORO EAST (NJ)",fee: 500},
+        {id: "GLASSBORO WEST", name: "GLASSBORO WEST (NJ)", fee: 500},
+        {id: "GRAHAM",name: "GRAHAM (WA)",fee: 500},
+        { id: "GRENADA", name: "GRENADA (MS)", fee: 500},
+        {id: "HALIFAX",name: "Halifax (NS)",fee: 500},
+        {id: "HAMMOND",name: "HAMMOND (IN)",fee: 500},
+        {id: "HAMPTON",name: "HAMPTON (VA)",fee: 500},
+        {id: "HARRISBURG",name: "HARRISBURG (PA)",fee: 500},
+        {id: "HARTFORD",name: "HARTFORD (CT)",fee: 500},
+        {id: "HARTFORD SPRINGFIELD",name: "HARTFORD SPRINGFIELD (CT)",fee: 500},
+        {id: "HAYWARD",name: "HAYWARD (CA)",fee: 500},
+        {id: "HELENA",name: "HELENA (MT)",fee: 500},
+        {id: "HONOLULU",name: "HONOLULU (HI)",fee: 500},
+        {id: "HOUSTON",name: "HOUSTON (TX)",fee: 500},
+        {id: "HOUSTON EAST",name: "HOUSTON EAST (TX)",fee: 500},
+        {id: "INDIANAPOLIS",name: "INDIANAPOLIS (IN)",fee: 500},
+        {id: "IONIA",name: "IONIA (MI)",fee: 500},
+        {id: "JACKSON",name: "JACKSON (MS)",fee: 500},
+        {id: "JACKSONVILLE NORTH",name: "JACKSONVILLE NORTH (FL)",fee: 500},
+        {id: "KANSAS CITY",name: "KANSAS CITY (KS)",fee: 500},
+        {id: "KINCHELOE",name: "KINCHELOE (MI)",fee: 500},
+        {id: "KINDAQUIK TOWING LLC",name: "Kindaquik Towing LLC (HI)",fee: 500},
+        {id: "KNIGHTDALE",name: "KNIGHTDALE (NC)",fee: 500},
+        { id: "KNOXVILLE", name: "KNOXVILLE (TN)", fee: 500},
+        {id: "LANSING",name: "LANSING (MI)",fee: 500},
+        {id: "LAS VEGAS",name: "LAS VEGAS (NV)",fee: 500},
+        {id: "LAS VEGAS WEST",name: "Las Vegas West (NV)",fee: 500},
+        {id: "LAUREL",name: "LAUREL (MD)",fee: 500},
+        {id: "LEXINGTON EAST",name: "LEXINGTON EAST (KY)",fee: 500},
+        {id: "LEXINGTON WEST",name: "LEXINGTON WEST (KY)",fee: 500},
+        {id: "LINCOLN",name: "LINCOLN (NE)",fee: 500},
+        {id: "LITTLE ROCK",name: "LITTLE ROCK (AR)",fee: 500},
+        {id: "LONDON",name: "London (ON)",fee: 500},
+        {id: "LONG BEACH",name: "LONG BEACH (CA)",fee: 500},
+        { id: "LONG ISLAND", name: "LONG ISLAND (NY)", fee: 500},
+        {id: "LONGVIEW",name: "LONGVIEW (TX)",fee: 500},
+        {id: "LOS ANGELES",name: "LOS ANGELES (CA)",fee: 500},
+        {id: "LOUISVILLE",name: "LOUISVILLE (KY)",fee: 500},
+        {id: "LUFKIN",name: "LUFKIN (TX)",fee: 500},
+        {id: "LUMBERTON",name: "LUMBERTON (NC)",fee: 500},
+        {id: "LYMAN",name: "LYMAN (ME)",fee: 500},
+        {id: "MACON",name: "MACON (GA)",fee: 500},
+        {id: "MADISON SOUTH",name: "MADISON SOUTH (WI)",fee: 500},
+        {id: "MARTINEZ",name: "MARTINEZ (CA)",fee: 500},
+        {id: "MCALLEN",name: "MCALLEN (TX)",fee: 500},
+        {id: "MEBANE",name: "MEBANE (NC)",fee: 500},
+        {id: "MEMPHIS",name: "MEMPHIS (TN)",fee: 500},
+        {id: "MENTONE",name: "Mentone (CA)",fee: 500},
+        {id: "MIAMI CENTRAL",name: "MIAMI CENTRAL (FL)",fee: 500},
+        {id: "MIAMI NORTH",name: "MIAMI NORTH (FL)",fee: 500},
+        {id: "MIAMI SOUTH",name: "MIAMI SOUTH (FL)",fee: 500},
+        {id: "MILWAUKEE NORTH",name: "MILWAUKEE NORTH (WI)",fee: 500},
+        {id: "MILWAUKEE SOUTH",name: "MILWAUKEE SOUTH (WI)",fee: 500},
+        {id: "MINNEAPOLIS",name: "MINNEAPOLIS (MN)",fee: 500},
+        {id: "MINNEAPOLIS NORTH",name: "MINNEAPOLIS NORTH (MN)",fee: 500},
+        {id: "MOBILE",name: "MOBILE (AL)",fee: 500},
+        {id: "MOBILE SOUTH",name: "MOBILE South (AL)",fee: 500},
+        {id: "MOCKSVILLE",name: "MOCKSVILLE (NC)",fee: 500},
+        {id: "MONCTON",name: "Moncton (NB)",fee: 500},
+        {id: "MONTGOMERY",name: "MONTGOMERY (AL)",fee: 500},
+        {id: "MONTREAL",name: "Montreal (QC)",fee: 500},
+        {id: "NAPA",name: "NAPA (CA)",fee: 500},
+        {id: "NASHVILLE",name: "NASHVILLE (TN)",fee: 500},
+        {id: "NEW ORLEANS",name: "NEW ORLEANS (LA)",fee: 500},
+        {id: "NEWBURGH",name: "NEWBURGH (NY)",fee: 500},
+        {id: "NORTH AUSTIN",name: "NORTH AUSTIN (TX)",fee: 500},
+        {id: "NORTH BOSTON",name: "NORTH BOSTON (MA)",fee: 500},
+        {id: "NORTH CHARLESTON",name: "NORTH CHARLESTON (SC)",fee: 500},
+        { id: "NORTH SEATTLE", name: "NORTH SEATTLE (WA)", fee: 500},
+        {id: "OCALA",name: "OCALA (FL)",fee: 500},
+        {id: "OGDEN",name: "OGDEN (UT)",fee: 500},
+        {id: "OKLAHOMA CITY",name: "OKLAHOMA CITY (OK)",fee: 500},
+        {id: "ORLANDO NORTH",name: "ORLANDO NORTH (FL)",fee: 500},
+        {id: "ORLANDO SOUTH",name: "ORLANDO SOUTH (FL)",fee: 500},
+        {id: "OTTAWA",name: "Ottawa (ON)",fee: 500},
+        {id: "PASCO",name: "PASCO (WA)",fee: 500},
+        {id: "PEORIA",name: "PEORIA (IL)",fee: 500},
+        {id: "PHILADELPHIA",name: "PHILADELPHIA (PA)",fee: 500},
+        {id: "PHILADELPHIA EAST",name: "PHILADELPHIA EAST (PA)",fee: 500},
+        {id: "PHOENIX",name: "PHOENIX (AZ)",fee: 500},
+        {id: "PHOENIX NORTH",name: "PHOENIX NORTH (AZ)",fee: 500},
+        {id: "PITTSBURGH NORTH",name: "PITTSBURGH NORTH (PA)",fee: 500},
+        {id: "PITTSBURGH SOUTH",name: "PITTSBURGH SOUTH (PA)",fee: 500},
+        {id: "PITTSBURGH WEST",name: "PITTSBURGH WEST (PA)",fee: 500},
+        {id: "PORTLAND NORTH",name: "PORTLAND NORTH (OR)",fee: 500},
+        {id: "PORTLAND SOUTH",name: "PORTLAND SOUTH (OR)",fee: 500},
+        {id: "PUNTA GORDA",name: "PUNTA GORDA (FL)",fee: 500},
+        {id: "RALEIGH",name: "RALEIGH (NC)",fee: 500},
+        {id: "RALEIGH NORTH",name: "RALEIGH NORTH (NC)",fee: 500},
+        {id: "RANCHO CUCAMONGA",name: "RANCHO CUCAMONGA (CA)",fee: 500},
+        {id: "RAPID CITY",name: "RAPID CITY (SD)",fee: 500},
+        {id: "REDDING",name: "Redding (CA)",fee: 500 },
+        {id: "RENO",name: "RENO (NV)",fee: 500},
+        {id: "RICHMOND",name: "RICHMOND (VA)",fee: 500},
+        {id: "RICHMOND EAST",name: "RICHMOND EAST (VA)",fee: 500},
+        {id: "ROCHESTER",name: "ROCHESTER (NY)",fee: 500},
+        {id: "RUTLAND",name: "Rutland (VT)",fee: 500},
+        {id: "SACRAMENTO",name: "SACRAMENTO (CA)",fee: 500},
+        {id: "SALT LAKE CITY",name: "SALT LAKE CITY (UT)",fee: 500},
+        {id: "SAN ANTONIO",name: "SAN ANTONIO (TX)",fee: 500},
+        {id: "SAN BERNARDINO",name: "SAN BERNARDINO (CA)",fee: 500},
+        {id: "SAN DIEGO",name: "SAN DIEGO (CA)",fee: 500},
+        {id: "SAN JOSE",name: "SAN JOSE (CA)",fee: 500},
+        {id: "SAVANNAH",name: "SAVANNAH (GA)",fee: 500},
+        {id: "SCRANTON",name: "SCRANTON (PA)",fee: 500},
+        {id: "SEAFORD",name: "SEAFORD (DE)",fee: 500},
+        {id: "SHREVEPORT",name: "SHREVEPORT (LA)",fee: 500},
+        {id: "SIKESTON",name: "SIKESTON (MO)",fee: 500},
+        {id: "SO SACRAMENTO",name: "SO SACRAMENTO (CA)",fee: 500},
+        {id: "SOMERVILLE",name: "SOMERVILLE (NJ)",fee: 500},
+        {id: "SOUTH BOSTON",name: "SOUTH BOSTON (MA)",fee: 500},
+        {id: "SOUTHERN ILLINOIS",name: "SOUTHERN ILLINOIS (IL)",fee: 500},
+        {id: "SPANAWAY",name: "SPANAWAY (WA)",fee: 500},
+        {id: "SPARTANBURG",name: "SPARTANBURG (SC)",fee: 500},
+        {id: "SPOKANE",name: "SPOKANE (WA)",fee: 500},
+        {id: "SPRINGFIELD",name: "SPRINGFIELD (MO)",fee: 500},
+        {id: "ST. CLOUD",name: "ST. CLOUD (MN)",fee: 500},
+        {id: "ST. JOHN'S",name: "St. John'S (NL)",fee: 500},
+        {id: "ST. LOUIS",name: "ST. LOUIS (MO)",fee: 500},
+        {id: "SUN VALLEY",name: "SUN VALLEY (CA)",fee: 500},
+        {id: "SYRACUSE",name: "SYRACUSE (NY)",fee: 500},
+        {id: "TALLAHASSEE",name: "TALLAHASSEE (FL)",fee: 500},
+        {id: "TAMPA SOUTH",name: "TAMPA SOUTH (FL)",fee: 500},
+        {id: "TANNER",name: "TANNER (AL)",fee: 500 },
+        {id: "TIFTON",name: "TIFTON (GA)",fee: 500},
+        {id: "TORONTO",name: "TORONTO (ON)",fee: 500},
+        {id: "TRENTON",name: "TRENTON (NJ)",fee: 500},
+        {id: "TUCSON",name: "TUCSON (AZ)",fee: 500 },
+        {id: "TULSA",name: "TULSA (OK)",fee: 500},
+        {id: "VALLEJO",name: "VALLEJO (CA)",fee: 500},
+        {id: "VAN NUYS",name: "VAN NUYS (CA)",fee: 500},
+        {id: "WACO",name: "WACO (TX)",fee: 500},
+        {id: "WALTON",name: "WALTON (KY)",fee: 500},
+        {id: "WASHINGTON DC",name: "WASHINGTON DC (MD)",fee: 500},
+        {id: "WAYLAND",name: "Wayland (MI)",fee: 500},
+        {id: "WEBSTER",name: "Webster (NH)",fee: 500},
+        {id: "WEST PALM BEACH",name: "WEST PALM BEACH (FL)",fee: 500},
+        {id: "WEST WARREN",name: "WEST WARREN (MA)",fee: 500},
+        {id: "WHEELING",name: "WHEELING (IL)",fee: 500},
+        {id: "WICHITA",name: "WICHITA (KS)",fee: 500},
+        {id: "WINDHAM",name: "Windham (ME)",fee: 500},
+        { id: "YORK HAVEN", name: "YORK HAVEN (PA)", fee: 500}
+    
+    ];
+
+    const iaaiLocations = [
 
         {
             id: "Abilene",
@@ -2584,43 +1493,135 @@ const locations = {
             name: "York Springs (PA)",
             fee: 900
         }
-    ]
+    ];
 
-    
+// ====== MAP ======
+const locations = {
+    copart: copartLocations,
+    iaai: iaaiLocations
 };
+
+// ====== ELEMENTS ======
 const locationSelect = document.getElementById("exampleFormControlSelect1");
+const auctionRadios = document.querySelectorAll('input[name="auction"]');
+const resultBox = document.getElementById("result");
 
-function updateLocations(type){
+// ====== RENDER ======
+function updateLocations(type) {
+    const list = locations[type] || [];
 
-    locationSelect.innerHTML = `
-        <option value="" disabled selected>Площадка</option>
-    `;
+    let html = `<option value="" disabled selected>Площадка</option>`;
 
-    locations[type].forEach(location => {
+    for (let i = 0; i < list.length; i++) {
+        html += `<option value="${list[i].id}">${list[i].name}</option>`;
+    }
 
-        const option = document.createElement("option");
-
-        option.value = location.id;
-        option.textContent = location.name;
-
-        locationSelect.appendChild(option);
-
-    });
-
+    locationSelect.innerHTML = html;
 }
 
-// radio кнопки
-const radios = document.querySelectorAll('input[name="auction"]');
-
-radios.forEach(radio => {
-
-    radio.addEventListener("change", function(){
-
+// ====== AUCTION SWITCH ======
+auctionRadios.forEach(radio => {
+    radio.addEventListener("change", function () {
         updateLocations(this.id);
-
+        calculate();
     });
-
 });
 
-// стартове завантаження
+// ====== INIT (ОДИН РАЗ!) ======
 updateLocations("copart");
+
+// ====== INPUTS ======
+const inputs = [
+    "pricelote",
+    "broker",
+    "expedition",
+    "poscomp",
+    "repair",
+    "valm2"
+];
+
+inputs.forEach(id => {
+    document.getElementById(id).addEventListener("input", calculate);
+});
+
+document.querySelectorAll("input[name='auction'], input[name='fuel'], input[name='kuzov'], select")
+    .forEach(el => el.addEventListener("change", calculate));
+
+// ====== HELPERS ======
+function val(id) {
+    return parseFloat(document.getElementById(id).value) || 0;
+}
+
+function isReady() {
+    return (
+        document.getElementById("pricelote").value !== "" &&
+        document.getElementById("valm2").value !== "" &&
+        document.getElementById("year").value !== "" &&
+        document.getElementById("exampleFormControlSelect1").value !== ""
+    );
+}
+
+// ====== CALC ======
+function calculate() {
+
+    if (!isReady()) {
+        resultBox.innerHTML = "";
+        return;
+    }
+
+    const lot = val("pricelote");
+    const broker = val("broker");
+    const expedition = val("expedition");
+    const company = val("poscomp");
+    const repair = val("repair");
+
+    const auctionFee = lot * 0.1;
+    const deliveryUSA = 470;
+    const sea = 1150;
+    const transfer = 158;
+    const insurance = lot * 0.02;
+    const portDelivery = 850;
+    const certificate = 130;
+    const registration = 98;
+
+    const total =
+        lot +
+        auctionFee +
+        deliveryUSA +
+        sea +
+        transfer +
+        insurance +
+        company +
+        expedition +
+        broker +
+        portDelivery +
+        certificate +
+        registration +
+        repair;
+
+    resultBox.innerHTML = `
+        <h3>Прорахунок:</h3>
+
+        <div class="result-row"><span>Разом</span><span>$${total.toFixed(0)}</span></div>
+
+        <div class="result-row"><span>Вартість лоту</span><span>$${lot}</span></div>
+        <div class="result-row"><span>Аукц.збір</span><span>$${auctionFee.toFixed(0)}</span></div>
+        <div class="result-row"><span>Вартість доставки (США)</span><span>$${deliveryUSA}</span></div>
+        <div class="result-row"><span>Море (Texas)</span><span>$${sea}</span></div>
+        <div class="result-row"><span>Комісія за переказ</span><span>$${transfer}</span></div>
+        <div class="result-row"><span>Страховка</span><span>$${insurance.toFixed(0)}</span></div>
+        <div class="result-row"><span>Послуги компанії</span><span>$${company}</span></div>
+        <div class="result-row"><span>Експедиція</span><span>$${expedition}</span></div>
+        <div class="result-row"><span>Брокер</span><span>$${broker}</span></div>
+        <div class="result-row"><span>Доставка від порту до України</span><span>$850</span></div>
+        <div class="result-row"><span>Сертифікат</span><span>$130</span></div>
+        <div class="result-row"><span>Постановка на обл.</span><span>$98</span></div>
+
+        <div class="result-row result-total">
+            <span>Разом</span><span>$${total.toFixed(0)}</span>
+        </div>
+    `;
+}
+
+// ====== FIRST RUN ======
+calculate();
