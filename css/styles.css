@@ -104,6 +104,24 @@ body {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
+.switcher{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.switcher button{
+    flex: 1 1 calc(50% - 10px);
+    min-width: 120px;
+}
+
+@media (max-width:480px){
+
+    .switcher button{
+        width: 100%;
+    }
+
+}
+
 hr {
   margin: 1rem 0;
   color: inherit;
@@ -119,10 +137,16 @@ h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1 {
   line-height: 1.2;
 }
 
-.form-row-custom {
+.form-row-custom{
     display: flex;
-    gap: 15px;
-    width: 100%;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.form-row-custom .form-control{
+    flex: 1 1 30%;
+    min-width: 120px;
+    box-sizing: border-box;
 }
 
 .form-row-custom input,
@@ -138,6 +162,19 @@ h1, .h1 {
     font-size: 2.5rem;
   }
 }
+
+@media (max-width: 480px){
+
+    .form-row-custom{
+        flex-direction: column;
+    }
+
+    .form-row-custom .form-control{
+        width: 100%;
+    }
+
+}
+
 
 h2, .h2 {
   font-size: calc(1.325rem + 0.9vw);
