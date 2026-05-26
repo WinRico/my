@@ -1495,6 +1495,102 @@
         }
     ];
 
+    const copartFees = [
+        { min: 0.01, max: 49.99, fee: 1 },
+        { min: 50, max: 99.99, fee: 1 },
+        { min: 100, max: 199.99, fee: 25 },
+        { min: 200, max: 299.99, fee: 60 },
+        { min: 300, max: 349.99, fee: 80 },
+        { min: 350, max: 399.99, fee: 90 },
+        { min: 400, max: 449.99, fee: 120 },
+        { min: 450, max: 499.99, fee: 130 },
+        { min: 500, max: 549.99, fee: 140 },
+        { min: 550, max: 599.99, fee: 150 },
+        { min: 600, max: 699.99, fee: 165 },
+        { min: 700, max: 799.99, fee: 185 },
+        { min: 800, max: 899.99, fee: 200 },
+        { min: 900, max: 999.99, fee: 215 },
+        { min: 1000, max: 1199.99, fee: 230 },
+        { min: 1200, max: 1299.99, fee: 255 },
+        { min: 1300, max: 1399.99, fee: 275 },
+        { min: 1400, max: 1499.99, fee: 280 },
+        { min: 1500, max: 1599.99, fee: 290 },
+        { min: 1600, max: 1699.99, fee: 305 },
+        { min: 1700, max: 1799.99, fee: 315 },
+        { min: 1800, max: 1999.99, fee: 325 },
+        { min: 2000, max: 2399.99, fee: 355 },
+        { min: 2400, max: 2499.99, fee: 380 },
+        { min: 2500, max: 2999.99, fee: 400 },
+        { min: 3000, max: 3499.99, fee: 450 },
+        { min: 3500, max: 3999.99, fee: 500 },
+        { min: 4000, max: 4499.99, fee: 600 },
+        { min: 4500, max: 4999.99, fee: 625 },
+        { min: 5000, max: 5999.99, fee: 650 },
+        { min: 6000, max: 6999.99, fee: 675 },
+        { min: 7000, max: 7999.99, fee: 700 },
+        { min: 8000, max: 8999.99, fee: 725 },
+        { min: 9000, max: 9999.99, fee: 725 },
+        { min: 10000, max: 11499.99, fee: 750 },
+        { min: 11500, max: 11999.99, fee: 760 },
+        { min: 12000, max: 12499.99, fee: 775 },
+        { min: 12500, max: 14999.99, fee: 790 }
+    ];
+    const iaaiFees = [
+        { min: 0.01, max: 99.99, fee: 1 },
+        { min: 100, max: 199.99, fee: 25 },
+        { min: 200, max: 299.99, fee: 60 },
+        { min: 300, max: 349.99, fee: 80 },
+        { min: 350, max: 399.99, fee: 90 },
+        { min: 400, max: 499.99, fee: 130 },
+        { min: 500, max: 599.99, fee: 150 },
+        { min: 600, max: 699.99, fee: 165 },
+        { min: 700, max: 799.99, fee: 185 },
+        { min: 800, max: 899.99, fee: 200 },
+        { min: 900, max: 999.99, fee: 215 },
+
+        { min: 1000, max: 1099.99, fee: 230 },
+        { min: 1100, max: 1199.99, fee: 255 },
+        { min: 1200, max: 1299.99, fee: 255 },
+        { min: 1300, max: 1399.99, fee: 275 },
+        { min: 1400, max: 1499.99, fee: 280 },
+        { min: 1500, max: 1599.99, fee: 290 },
+        { min: 1600, max: 1799.99, fee: 315 },
+        { min: 1800, max: 1999.99, fee: 325 },
+
+        { min: 2000, max: 2199.99, fee: 355 },
+        { min: 2200, max: 2399.99, fee: 355 },
+        { min: 2400, max: 2499.99, fee: 380 },
+        { min: 2500, max: 2799.99, fee: 400 },
+        { min: 2800, max: 2999.99, fee: 400 },
+
+        { min: 3000, max: 3499.99, fee: 450 },
+        { min: 3500, max: 3999.99, fee: 500 },
+        { min: 4000, max: 4499.99, fee: 600 },
+        { min: 4500, max: 4999.99, fee: 625 },
+
+        { min: 5000, max: 5999.99, fee: 650 },
+        { min: 6000, max: 6999.99, fee: 675 },
+        { min: 7000, max: 7999.99, fee: 700 },
+        { min: 8000, max: 9999.99, fee: 725 },
+
+        { min: 10000, max: 11499.99, fee: 750 },
+        { min: 11500, max: 11999.99, fee: 760 },
+        { min: 12000, max: 12499.99, fee: 775 },
+        { min: 12500, max: 14999.99, fee: 790 },
+
+    ];
+    const BitFee = [
+        { min: 0, max: 99.99, fee: 0 },
+        { min: 100, max: 499.99, fee: 49 },
+        { min: 500, max: 999.99, fee: 59 },
+        { min: 1000, max: 1499.99, fee: 79 },
+        { min: 1500, max: 1999.99, fee: 89 },
+        { min: 2000, max: 3999.99, fee: 99 },
+        { min: 4000, max: 5999.99, fee: 109 },
+        { min: 6000, max: 7999.99, fee: 139 },
+        { min: 8000, max: 1000000, fee: 149 },
+
+    ];
 // ====== MAP ======
 const locations = {
     copart: copartLocations,
@@ -1533,10 +1629,9 @@ updateLocations("copart");
 // ====== INPUTS ======
 const inputs = [
     "pricelote",
-    "broker",
-    "expedition",
     "poscomp",
     "repair",
+    "year",
     "valm2"
 ];
 
@@ -1560,6 +1655,67 @@ function isReady() {
         document.getElementById("exampleFormControlSelect1").value !== ""
     );
 }
+ function getCopartFee(price) {
+
+    if (price >= 15000) {
+        return price * 0.06;
+    }
+
+    for (const row of copartFees) {
+        if (price >= row.min && price <= row.max) {
+            return row.fee;
+        }
+    }
+
+    return 0;
+}
+function getIAAIFee(price) {
+
+    if (price >= 15000) {
+        return price * 0.06;
+    }
+
+    for (const row of copartFees) {
+        if (price >= row.min && price <= row.max) {
+            return row.fee;
+        }
+    }
+
+    return 0;
+}
+
+function getBitFee(price) {
+
+
+    for (const row of BitFee) {
+        if (price >= row.min && price <= row.max) {
+            return row.fee;
+        }
+    }
+    return 0;
+}
+
+function calculateExcise(year, engineVolume) {
+
+    // поточний рік
+    const currentYear = new Date().getFullYear() - 1;
+
+    // кількість повних років
+    let age = currentYear - year;
+
+    if (age < 1) {
+        age = 1;
+    }
+    // переводимо 1998 -> 1.998
+    const volume = engineVolume / 1000;
+
+    // коефіцієнт
+    const coefficient = engineVolume <= 3000 ? 50 : 100;
+    // формула
+    const excise = volume * coefficient * age * 1.09;
+
+    return excise;
+}
 
 // ====== CALC ======
 function calculate() {
@@ -1568,31 +1724,87 @@ function calculate() {
         resultBox.innerHTML = "";
         return;
     }
+    let broker = 0;
+
+    if (document.getElementById("benz").checked) {
+        broker = 150;
+    }
+
+    if (document.getElementById("dyzel").checked) {
+        broker = 150;
+    }
+
+    if (document.getElementById("gybryd").checked) {
+        broker = 300;
+    }
+
+    if (document.getElementById("electro").checked) {
+        broker = 300;
+    }
+    let hazardous = 0;
+
+    if (
+        document.getElementById("gybryd").checked ||
+        document.getElementById("electro").checked
+    ) {
+        hazardous = 200;
+    }
+   
 
     const lot = val("pricelote");
-    const broker = val("broker");
-    const expedition = val("expedition");
+    const expedition = 450;
     const company = val("poscomp");
     const repair = val("repair");
+    const year = val("year");
+    const engineVolume = val("valm2");
+    const internetBitFee = getBitFee(lot);
+    let  typeEngine = 0;
 
-    const auctionFee = lot * 0.1;
-    const deliveryUSA = 470;
-    const sea = 1150;
-    const transfer = 158;
-    const insurance = lot * 0.02;
+    if (document.getElementById("electro").checked) {
+        typeEngine = 1;
+    } else typeEngine = 0;
+
+    const gateFee = 95;
+    const titleShippingFees = 35;
+    const auctionType = document.querySelector('input[name="auction"]:checked').id;
+    const auctionFee =
+        auctionType === "copart"
+            ? getCopartFee(lot) + internetBitFee + gateFee + titleShippingFees
+            : getIAAIFee(lot) + internetBitFee + gateFee + titleShippingFees;
+
+    const deliveryUSA = 420;
+    const sea = 1050;
+    const insurance = lot <= 10000
+        ? 100
+        : lot * 0.01;
     const portDelivery = 850;
-    const certificate = 130;
-    const registration = 98;
+    const excise = calculateExcise(year, engineVolume);
+    const mytnaSquareCostForAuto = lot + auctionFee + 1600;
+    const myto = mytnaSquareCostForAuto * 0.1;
+    const pdv = (mytnaSquareCostForAuto + excise + myto)*0.2
+    const priceRozmyntinyaFuel = excise + myto + pdv;
+    const priceRozmyntinyaElectro = ((lot + auctionFee) + 1600 + engineVolume ) * 0.2;
+    const priceRozmyntinya = typeEngine != 0
+        ? priceRozmyntinyaElectro
+        : priceRozmyntinyaFuel;
+    
+    const podatokPensiaDaniila = mytnaSquareCostForAuto * 0.03;
 
+    const certificate = 130;
+    const registration = 40;
+    const costForExchange = (lot + auctionFee + deliveryUSA + sea + hazardous + insurance) * 0.035 + 100;
     const total =
         lot +
         auctionFee +
         deliveryUSA +
         sea +
-        transfer +
+        costForExchange +
         insurance +
         company +
         expedition +
+        excise +
+        myto +
+        pdv +
         broker +
         portDelivery +
         certificate +
@@ -1605,17 +1817,20 @@ function calculate() {
         <div class="result-row"><span>Разом</span><span>$${total.toFixed(0)}</span></div>
 
         <div class="result-row"><span>Вартість лоту</span><span>$${lot}</span></div>
-        <div class="result-row"><span>Аукц.збір</span><span>$${auctionFee.toFixed(0)}</span></div>
+        <div class="result-row"><span>Аукц.збір</span><span>$${auctionFee}</span></div>
         <div class="result-row"><span>Вартість доставки (США)</span><span>$${deliveryUSA}</span></div>
         <div class="result-row"><span>Море (Texas)</span><span>$${sea}</span></div>
-        <div class="result-row"><span>Комісія за переказ</span><span>$${transfer}</span></div>
+        <div class="result-row"><span>Комісія за переказ</span><span>$${costForExchange}</span></div>
         <div class="result-row"><span>Страховка</span><span>$${insurance.toFixed(0)}</span></div>
         <div class="result-row"><span>Послуги компанії</span><span>$${company}</span></div>
+        ${hazardous > 0 ? `<div class="result-row"><span>Hazardous (Небезпечний вантаж)</span><span>$${hazardous}</span></div>` : ""}
         <div class="result-row"><span>Експедиція</span><span>$${expedition}</span></div>
-        <div class="result-row"><span>Брокер</span><span>$${broker}</span></div>
         <div class="result-row"><span>Доставка від порту до України</span><span>$850</span></div>
+        <div class="result-row"><span>Брокер</span><span>$${broker}</span></div>
+        <div class="result-row"><span>Загальна вартість розмитнення</span><span>$${priceRozmyntinya}</span></div>
         <div class="result-row"><span>Сертифікат</span><span>$130</span></div>
-        <div class="result-row"><span>Постановка на обл.</span><span>$98</span></div>
+        <div class="result-row"><span>Постановка на обл.</span><span>$${registration}</span></div>
+        <div class="result-row"><span>Податок до пенсійного фонду</span><span>$${podatokPensiaDaniila}</span></div>
 
         <div class="result-row result-total">
             <span>Разом</span><span>$${total.toFixed(0)}</span>
