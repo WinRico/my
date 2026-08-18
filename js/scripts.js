@@ -1095,13 +1095,18 @@ function calculate() {
 
     const gateFee = 95;
     const titleShippingFees = 35;
+
     const auctionType = document.querySelector('input[name="auction"]:checked').id;
+
     const auctionFee =
         auctionType === "copart"
             ? getCopartFee(lot) + internetBitFee + gateFee + titleShippingFees
             : getIAAIFee(lot) + internetBitFee + gateFee + titleShippingFees;
 
-    const deliveryUSA = 420;
+    const locationId = document.getElementById("exampleFormControlSelect1").value;
+
+const deliveryUSA =(locations[auctionType] || []).find(location => location.id === locationId)?.fee || 0;
+
     const sea = 1050;
     const insurance = lot <= 10000
         ? 100
