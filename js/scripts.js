@@ -881,85 +881,20 @@ function calculate() {
         portDelivery +
         certificate +
         registration +
-        repair;
+        repair+
+        hazardous+
+        podatokPensiaDaniila;
         
-        resultBox.innerHTML = `
-    <h3>Прорахунок:</h3>
-
-    <div class="result-row"><span>Разом</span><span>$${total.toFixed(0)}</span></div>
-
-    <div class="result-row"><span>Вартість лоту</span><span>$${lot}</span></div>
-    <div class="result-row"><span>Аукц.збір</span><span>$${auctionFee}</span></div>
-    <div class="result-row"><span>Вартість доставки (США)</span><span>$${deliveryUSA}</span></div>
-    <div class="result-row"><span>Море (Texas)</span><span>$${sea}</span></div>
-    <div class="result-row"><span>Комісія за переказ</span><span>$${costForExchange}</span></div>
-    <div class="result-row"><span>Страховка</span><span>$${insurance.toFixed(0)}</span></div>
-    <div class="result-row"><span>Послуги компанії</span><span>$${company}</span></div>
-
-    ${hazardous > 0 
-        ? `<div class="result-row"><span>Hazardous (Небезпечний вантаж)</span><span>$${hazardous}</span></div>` 
-        : ""
-    }
-
-    <div class="result-row"><span>Експедиція</span><span>$${expedition}</span></div>
-    <div class="result-row"><span>Доставка від порту до України</span><span>$850</span></div>
-    <div class="result-row"><span>Брокер</span><span>$${broker}</span></div>
-    <div class="result-row"><span>Загальна вартість розмитнення</span><span>$${priceRozmyntinya}</span></div>
-    <div class="result-row"><span>Сертифікат</span><span>$130</span></div>
-    <div class="result-row"><span>Постановка на обл.</span><span>$${registration}</span></div>
-
-    ${typeEngine > 0 
-        ? "" 
-        : `<div class="result-row">
-            <span>Пенсійний фонд</span>
-            <span>$${podatokPensiaDaniila.toFixed(0)}</span>
-        </div>`
-    }
-
-    <div class="result-row result-total">
-        <span>Разом</span>
-        <span>$${total.toFixed(0)}</span>
-    </div>
-
-    <button type="button" class="copy-btn" onclick="copyCalculation()">
-        📋 Скопіювати прорахунок
-    </button>
-`;
-   /* resultBox.innerHTML = `
+    resultBox.innerHTML = `
         <h3>Прорахунок:</h3>
 
-        <div class="result-row"><span>Разом</span><span>$${total.toFixed(0)}</span></div>
-
-        <div class="result-row"><span>Вартість лоту</span><span>$${lot}</span></div>
-        <div class="result-row"><span>Аукц.збір</span><span>$${auctionFee}</span></div>
-        <div class="result-row"><span>Вартість доставки (США)</span><span>$${deliveryUSA}</span></div>
-        <div class="result-row"><span>Море (Texas)</span><span>$${sea}</span></div>
-        <div class="result-row"><span>Комісія за переказ</span><span>$${costForExchange}</span></div>
-        <div class="result-row"><span>Страховка</span><span>$${insurance.toFixed(0)}</span></div>
-        <div class="result-row"><span>Послуги компанії</span><span>$${company}</span></div>
-        ${hazardous > 0 ? `<div class="result-row"><span>Hazardous (Небезпечний вантаж)</span><span>$${hazardous}</span></div>` : ""}
-        <div class="result-row"><span>Експедиція</span><span>$${expedition}</span></div>
-        <div class="result-row"><span>Доставка від порту до України</span><span>$850</span></div>
-        <div class="result-row"><span>Брокер</span><span>$${broker}</span></div>
-        <div class="result-row"><span>Загальна вартість розмитнення</span><span>$${priceRozmyntinya}</span></div>
-        <div class="result-row"><span>Сертифікат</span><span>$130</span></div>
-        <div class="result-row"><span>Постановка на обл.</span><span>$${registration}</span></div>
-        ${typeEngine > 0 ? "" : `<div class="result-row"><span>Пенсійний фонд</span><span>$${podatokPensiaDaniila.toFixed(0)}</span></div>`}
-
-        <div class="result-row result-total">
-            <span>Разом</span><span>$${total.toFixed(0)}</span>
-        </div>
-    `;*/
-    resultBox.innerHTML = `
-    <h3>Прорахунок:</h3>
-
     <div class="result-row"><span>Разом</span><span>$${total.toFixed(0)}</span></div>
 
     <div class="result-row"><span>Вартість лоту</span><span>$${lot}</span></div>
     <div class="result-row"><span>Аукц.збір</span><span>$${auctionFee}</span></div>
     <div class="result-row"><span>Вартість доставки (США)</span><span>$${deliveryUSA}</span></div>
     <div class="result-row"><span>Море (Texas)</span><span>$${sea}</span></div>
-    <div class="result-row"><span>Комісія за переказ</span><span>$${costForExchange}</span></div>
+    <div class="result-row"><span>Комісія за переказ</span><span>$${costForExchange.toFixed(0)}</span></div>
     <div class="result-row"><span>Страховка</span><span>$${insurance.toFixed(0)}</span></div>
     <div class="result-row"><span>Послуги компанії</span><span>$${company}</span></div>
 
@@ -971,7 +906,7 @@ function calculate() {
     <div class="result-row"><span>Експедиція</span><span>$${expedition}</span></div>
     <div class="result-row"><span>Доставка від порту до України</span><span>$850</span></div>
     <div class="result-row"><span>Брокер</span><span>$${broker}</span></div>
-    <div class="result-row"><span>Загальна вартість розмитнення</span><span>$${priceRozmyntinya}</span></div>
+    <div class="result-row"><span>Загальна вартість розмитнення</span><span>$${priceRozmyntinya.toFixed(0)}</span></div>
     <div class="result-row"><span>Сертифікат</span><span>$130</span></div>
     <div class="result-row"><span>Постановка на обл.</span><span>$${registration}</span></div>
 
@@ -988,31 +923,46 @@ function calculate() {
         <span>$${total.toFixed(0)}</span>
     </div>
 
-    <button id="copyCalculation" class="copy-btn">
-        📋 Скопіювати прорахунок
-    </button>
-`;
+        <button type="button"
+                class="copy-btn"
+                onclick="copyCalculation(this)">
+            📋 Скопіювати прорахунок
+        </button>
+    `;
 }
-calculationText = `
-Прорахунок:
 
-Разом: $${total.toFixed(0)}
-Вартість лоту: $${lot}
-Аукц.збір: $${auctionFee}
-Вартість доставки (США): $${deliveryUSA}
-Море (Texas): $${sea}
-Комісія за переказ: $${costForExchange}
-Страховка: $${insurance.toFixed(0)}
-Послуги компанії: $${company}
-${hazardous > 0 ? `Hazardous (Небезпечний вантаж): $${hazardous}\n` : ""}Експедиція: $${expedition}
-Доставка від порту до України: $850
-Брокер: $${broker}
-Загальна вартість розмитнення: $${priceRozmyntinya}
-Сертифікат: $130
-Постановка на обл.: $${registration}
-${typeEngine > 0 ? "" : `Пенсійний фонд: $${podatokPensiaDaniila.toFixed(0)}\n`}
-Разом: $${total.toFixed(0)}
-`.trim();
 
-// ====== FIRST RUN ======
+// ========================================
+// КОПІЮВАННЯ — ПОЗА calculate()
+// ========================================
+
+function copyCalculation(button) {
+
+    let text = button.parentElement.innerText;
+
+    text = text
+        .replace("📋 Скопіювати прорахунок", "")
+        .trim();
+
+    navigator.clipboard.writeText(text)
+        .then(() => {
+
+            button.textContent = "✅ Скопійовано!";
+
+            setTimeout(() => {
+                button.textContent = "📋 Скопіювати прорахунок";
+            }, 2000);
+
+        })
+        .catch((error) => {
+
+            console.error("Помилка копіювання:", error);
+            alert("Не вдалося скопіювати прорахунок");
+
+        });
+}
+
+
+// FIRST RUN
 calculate();
+      
