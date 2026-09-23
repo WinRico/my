@@ -151,25 +151,91 @@ body {
     color: #212529 !important;
 }
 .copy-btn {
-    width: 100%;
-    margin-top: 20px;
-    padding: 12px 20px;
+    width: 55px;
+    height: 55px;
+
+    margin: 0;
+    padding: 0;
+
     border: none;
-    border-radius: 8px;
-    background: white;
-    color: #222;
-    font-size: 16px;
-    font-weight: 600;
+    outline: none;
+
+    background: transparent !important;
+
+    color: white;
+
     cursor: pointer;
-    transition: 0.2s;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 1px;
+
+    transition: transform 0.15s ease, opacity 0.15s ease;
 }
 
 .copy-btn:hover {
-    background: #e8e8e8;
+    background: transparent !important;
+    transform: scale(1.08);
+    opacity: 1;
 }
 
 .copy-btn:active {
-    transform: scale(0.98);
+    transform: scale(0.95);
+}
+
+.copy-icon {
+    position: relative;
+    width: 27px;
+    height: 27px;
+}
+
+.copy-square {
+    position: absolute;
+
+    width: 16px;
+    height: 16px;
+
+    border: 2px solid white;
+    border-radius: 4px;
+
+    background: transparent;
+}
+
+.copy-square-back {
+    left: 1px;
+    top: 1px;
+}
+
+.copy-square-front {
+    left: 8px;
+    top: 8px;
+}
+
+.copy-text {
+    font-size: 9px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    color: white;
+}
+.copy-btn {
+    opacity: 0.9;
+}
+.copy-btn:hover {
+    opacity: 1;
+}
+.calculation-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 15px;
+}
+
+.calculation-header h3 {
+    margin: 0;
 }
 .form-grid {
     display: grid;
