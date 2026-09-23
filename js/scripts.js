@@ -886,10 +886,20 @@ function calculate() {
         podatokPensiaDaniila;
         
     resultBox.innerHTML = `
-        <h3>Прорахунок:</h3>
-
+        <div class="calculation-header">
+            <h3>Прорахунок:</h3>
+            <button type="button" class="copy-btn" onclick="copyCalculation(this)">
+                <span class="copy-icon">
+                    <span class="copy-square copy-square-back"></span>
+                    <span class="copy-square copy-square-front"></span>
+                </span>
+                <span class="copy-text">COPY</span>
+            </button>
+            <button type="button" class="pdf-btn" onclick="downloadCalculationPDF()">
+                <span class="pdf-icon">PDF</span>
+            </button>
+        </div>
     <div class="result-row"><span>Разом</span><span>$${total.toFixed(0)}</span></div>
-
     <div class="result-row"><span>Вартість лоту</span><span>$${lot}</span></div>
     <div class="result-row"><span>Аукц.збір</span><span>$${auctionFee}</span></div>
     <div class="result-row"><span>Вартість доставки (США)</span><span>$${deliveryUSA}</span></div>
@@ -897,12 +907,10 @@ function calculate() {
     <div class="result-row"><span>Комісія за переказ</span><span>$${costForExchange.toFixed(0)}</span></div>
     <div class="result-row"><span>Страховка</span><span>$${insurance.toFixed(0)}</span></div>
     <div class="result-row"><span>Послуги компанії</span><span>$${company}</span></div>
-
     ${hazardous > 0 
         ? `<div class="result-row"><span>Hazardous (Небезпечний вантаж)</span><span>$${hazardous}</span></div>` 
         : ""
     }
-
     <div class="result-row"><span>Експедиція</span><span>$${expedition}</span></div>
     <div class="result-row"><span>Доставка від порту до України</span><span>$850</span></div>
     <div class="result-row"><span>Брокер</span><span>$${broker}</span></div>
@@ -923,11 +931,7 @@ function calculate() {
         <span>$${total.toFixed(0)}</span>
     </div>
 
-        <button type="button"
-                class="copy-btn"
-                onclick="copyCalculation(this)">
-            📋 Скопіювати прорахунок
-        </button>
+        
     `;
 }
 
@@ -938,31 +942,252 @@ function calculate() {
 
 function copyCalculation(button) {
 
-    let text = button.parentElement.innerText;
+    const resultBox = button.closest(".calculation-header").parentElement;
 
-    text = text
-        .replace("📋 Скопіювати прорахунок", "")
-        .trim();
+    const rows = resultBox.querySelectorAll(".result-row");
 
-    navigator.clipboard.writeText(text)
+    let text = "Прорахунок:\n\n";
+
+    rows.forEach(row => {
+
+        const spans = row.querySelectorAll("span");
+
+        if (spans.length < 2) return;
+
+        const name = spans[0].innerText.trim();
+        const value = spans[1].innerText.trim();
+
+        // Пропускаємо верхній "Разом"
+        if (
+            name === "Разом" &&
+            !row.classList.contains("result-total")
+        ) {
+            return;
+        }
+
+        if (row.classList.contains("result-total")) {
+            text += `\nРАЗОМ: ${value}\n`;
+        } else {
+            text += `${name}: ${value}\n`;
+        }
+    });
+
+    navigator.clipboard.writeText(text.trim())
         .then(() => {
 
-            button.textContent = "✅ Скопійовано!";
+            button.innerHTML = `
+                <span class="copy-text">✓ COPIED</span>
+            `;
 
             setTimeout(() => {
-                button.textContent = "📋 Скопіювати прорахунок";
-            }, 2000);
+                button.innerHTML = `
+                    <span class="copy-icon">
+                        <span class="copy-square copy-square-back"></span>
+                        <span class="copy-square copy-square-front"></span>
+                    </span>
+                    <span class="copy-text">COPY</span>
+                `;
+            }, 1500);
 
         })
-        .catch((error) => {
-
+        .catch(error => {
             console.error("Помилка копіювання:", error);
-            alert("Не вдалося скопіювати прорахунок");
-
         });
 }
+async function downloadCalculationPDF() {
+
+    try {
+
+        const resultBox = document.querySelector(".calculation-header").parentElement;
+        const rows = resultBox.querySelectorAll(".result-row");
+
+        const tableData = [];
+
+        rows.forEach(row => {
+
+            const spans = row.querySelectorAll("span");
+
+            if (spans.length < 2) return;
+
+            const name = spans[0].innerText.trim();
+            const value = spans[1].innerText.trim();
+
+            // Не додаємо верхній "Разом"
+            if (
+                name === "Разом" &&
+                !row.classList.contains("result-total")
+            ) {
+                return;
+            }
+
+            tableData.push([name, value]);
+        });
 
 
-// FIRST RUN
+        // =========================
+        // Створюємо PDF
+        // =========================
+
+        const { jsPDF } = window.jspdf;
+
+        const doc = new jsPDF();
+
+
+        // =========================
+        // Завантаження шрифту онлайн
+        // =========================
+
+        async function loadFont(url) {
+
+            const response = await fetch(url);
+
+            if (!response.ok) {
+                throw new Error(
+                    "Не вдалося завантажити шрифт: " + url
+                );
+            }
+
+            const buffer = await response.arrayBuffer();
+
+            let binary = "";
+
+            const bytes = new Uint8Array(buffer);
+
+            for (let i = 0; i < bytes.length; i++) {
+                binary += String.fromCharCode(bytes[i]);
+            }
+
+            return btoa(binary);
+        }
+
+
+        // Roboto Regular
+        const regularFont = await loadFont(
+            "https://cdn.jsdelivr.net/gh/googlefonts/roboto@main/src/hinted/Roboto-Regular.ttf"
+        );
+
+
+        // Roboto Bold
+        const boldFont = await loadFont(
+            "https://cdn.jsdelivr.net/gh/googlefonts/roboto@main/src/hinted/Roboto-Bold.ttf"
+        );
+
+
+        // =========================
+        // Додаємо шрифти в PDF
+        // =========================
+
+        doc.addFileToVFS(
+            "Roboto-Regular.ttf",
+            regularFont
+        );
+
+        doc.addFont(
+            "Roboto-Regular.ttf",
+            "Roboto",
+            "normal"
+        );
+
+
+        doc.addFileToVFS(
+            "Roboto-Bold.ttf",
+            boldFont
+        );
+
+        doc.addFont(
+            "Roboto-Bold.ttf",
+            "Roboto",
+            "bold"
+        );
+
+
+        // =========================
+        // Заголовок
+        // =========================
+
+        doc.setFont("Roboto", "bold");
+        doc.setFontSize(18);
+
+        doc.text(
+            "Прорахунок автомобіля",
+            14,
+            20
+        );
+
+
+        // =========================
+        // Таблиця
+        // =========================
+
+        doc.autoTable({
+
+            startY: 30,
+
+            head: [
+                ["Стаття", "Вартість"]
+            ],
+
+            body: tableData,
+
+            theme: "grid",
+
+            styles: {
+                font: "Roboto",
+                fontStyle: "normal",
+                fontSize: 10,
+                cellPadding: 4
+            },
+
+            headStyles: {
+                font: "Roboto",
+                fontStyle: "bold",
+                fillColor: [40, 40, 40],
+                textColor: 255
+            },
+
+            columnStyles: {
+
+                0: {
+                    cellWidth: 125
+                },
+
+                1: {
+                    cellWidth: 45,
+                    halign: "right"
+                }
+            },
+
+            didParseCell: function(data) {
+
+                if (
+                    data.section === "body" &&
+                    data.row.index === tableData.length - 1
+                ) {
+
+                    data.cell.styles.font = "Roboto";
+                    data.cell.styles.fontStyle = "bold";
+                }
+            }
+        });
+
+
+        // =========================
+        // Зберігаємо PDF
+        // =========================
+
+        doc.save("proрахунок-авто.pdf");
+
+
+    } catch (error) {
+
+        console.error("ПОМИЛКА PDF:", error);
+
+        alert(
+            "Не вдалося створити PDF.\n\n" +
+            error.message
+        );
+    }
+
+}
 calculate();
       
